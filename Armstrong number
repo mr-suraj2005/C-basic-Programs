@@ -1,0 +1,23 @@
+//Armstrong Number
+#include<stdio.h>
+#include<math.h>
+void main(){
+    int org,c,arm,n,num;
+    printf("Enter the number: \n");
+    scanf("%d",&num);
+    org=num;
+    while(num>0) {
+        num/=10;
+        ++n;
+    }
+    printf("Count is %d\t",n);
+    while(num>0) {
+        c=num%10;
+        arm=arm+pow(c,n);
+        num/=10;
+    }
+    if(org==arm)
+    printf("\n%d is a Armstrong number",org);
+    else 
+    printf("\n%d is not a Armstrong number",org);
+}
