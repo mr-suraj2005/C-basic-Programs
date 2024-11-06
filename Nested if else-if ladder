@@ -1,0 +1,22 @@
+//read percentage of marks and display appropriate message
+#include<stdio.h>
+void main()
+{
+    int percent;
+    printf("Enter the marks that is need to be checked\n");
+    scanf("%d",&percent);
+    if(percent>=90 && percent<=100)
+    printf("%d got A+",percent);
+    else if(percent>=80 && percent<90)
+    printf("%d got A",percent);
+    else if(percent>=70 && percent<80)
+    printf("%d got B",percent);
+    else if(percent>=60 && percent<70)
+    printf("%d got C",percent);
+    else if(percent>=50 && percent<60)
+    printf("%d got E",percent);
+    else if(percent<50)
+    printf("%d failed",percent);
+    else 
+    printf("Put a valid number");
+}
