@@ -1,3 +1,4 @@
+//aita khali 1kta arrayer addition
 #include<stdio.h>
 void main()
 {
@@ -13,4 +14,37 @@ void main()
         sum+=arr[i];
     }
     printf("The numbers are= %d\n",sum);
+}
+//aita te 2 to array er addition korchi
+#include<stdio.h>
+void main()
+{
+    int i,n;
+    printf("Enter number of terms: \n");
+    scanf("%d" ,&n);
+    int arr1[n];
+    int arr2[n];
+    int sum1=0,sum2=0,sum=0;
+    printf("1st numbers are= ");
+    
+    for(i=0;i<n;i++){
+        scanf("%d",&arr1[i]);
+    }
+    for(i=0;i<n;i++){
+        sum1+=arr1[i];
+    }
+    
+    printf("2nd numbers are= ");
+    
+    for(i=0;i<n;i++){
+        scanf("%d",&arr2[i]);
+    }
+    
+    for(i=0;i<n;i++){
+        sum2+=arr2[i];
+    }
+    printf("The sum of the 1st array= %d\n",sum1);
+    printf("The sum of the 2nd array= %d\n",sum2);
+    sum=sum1+sum2;
+    printf("Sum of the two arrays= %d\n",sum);
 }
