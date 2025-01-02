@@ -1,0 +1,27 @@
+#include<stdio.h>
+void main(){
+    int i,n,t;
+    printf("Enter number of terms:  ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter %d numbers\n",n);
+    for(i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    printf("Unreversed number is:\n");
+    for(i=0;i<n;i++){
+        printf("%d\t",arr[i]);
+    }
+    int start=0,end=n-1;
+    while(start<end) {
+        t=arr[start];
+        arr[start]=arr[end];
+        arr[end]=t;
+        end--;
+        start++;
+    }
+    printf("\nReversed number is:\n");
+    for(i=0;i<n;i++){
+        printf("%d\t",arr[i]);
+    }
+}
