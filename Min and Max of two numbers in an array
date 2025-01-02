@@ -1,0 +1,25 @@
+#include<stdio.h>
+void main(){
+    int i,n,minimum=0,maximum=0;
+    printf("Enter number of terms:  ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter %d numbers\n",n);
+    for(i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++){
+        minimum=arr[0];
+        if(arr[i]<minimum) {
+            minimum=arr[i];
+        }
+    }
+    for(i=0;i<n;i++){
+        maximum=arr[0];
+        if(arr[i]>maximum) {
+            maximum=arr[i];
+        }
+    }
+    printf("Minimum number is  %d",minimum);
+    printf("\nMaximum number is  %d",maximum);
+}
