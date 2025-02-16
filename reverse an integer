@@ -1,0 +1,15 @@
+#include<stdio.h>
+void main()
+{
+    int num,sum=0,n;
+    printf("Enter a number!\n");
+    scanf("%d",&num);
+    while(num>0)
+    {
+        n=num%10;
+        sum= sum*10+n;
+        num/=10;
+    }
+    printf("The Reversed Integer is %d",sum);
+}
+//By multiplying sum by 10 in each step, we ensure that the digits shift to the left, allowing us to construct the reversed number correctly.
