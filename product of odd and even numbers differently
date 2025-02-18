@@ -1,0 +1,18 @@
+#include<stdio.h>
+void main(){
+    int n,even=1,odd=1;
+    printf("Enter a number\n");
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++)
+    {
+        if(i%2==0)
+        {
+            even*=i;
+        }
+        else
+        odd*=i;
+    }
+    printf("Product of all even numbers till %d is %d" ,n,even);
+    printf("\n");
+    printf("Product of all odd numbers till %d is %d" ,n,odd);
+}
