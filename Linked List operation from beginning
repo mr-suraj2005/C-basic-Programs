@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node *next;
+};
+
+void insertAtBeginning(struct Node **head_ref, int new_data) {
+    struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
+    new_node->data = new_data;
+    new_node->next = *head_ref;
+    *head_ref = new_node;
+    printf("Inserted %d at the beginning.\n", new_data);
+}
+
+void deleteFromBeginning(struct Node **head_ref) {
+    if (*head_ref == NULL) {
+        printf("List is already empty.\n");
+        return;
+    }
+    struct Node* temp = *head_ref;
+    *head_ref = (*head_ref)->next;
+    free(temp);
+    printf("Deleted from beginning.\n");
+}
+
+void display(struct Node *node) {
+    if (node == NULL) {
+        printf("List is empty.\n");
+        return;
+    }
+    printf("Linked list: ");
+    while (node != NULL) {
+        printf("%d -> ", node->data);
+        node = node->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    struct Node* head = NULL;
+    int choice, value;
+
+    while (1) {
+        printf("\nMenu:\n 1. Insert at beginning\n 2. Delete from beginning\n 3. Display list\n 4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter value to insert: ");
+                scanf("%d", &value);
+                insertAtBeginning(&head, value);
+                break;
+            case 2:
+                deleteFromBeginning(&head);
+                break;
+            case 3:
+                display(head);
+                break;
+            case 4:
+                exit(0);
+            default:
+                printf("Please give a correct option\n");
+        }
+    }
+
+    return 0;
+}
